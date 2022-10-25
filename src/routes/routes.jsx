@@ -8,6 +8,7 @@ import Login from "../components/Login/Login";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Register from "../components/Register/Register";
 import Main from "../layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "courses/:id/checkout",
-        element: <Checkout />,
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
         loader: async ({ params }) =>
           fetch(`https://dev-sparkle-server.vercel.app/courses/${params.id}`),
       },
