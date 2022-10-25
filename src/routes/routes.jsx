@@ -35,10 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/courses/:courseId",
         element: <CourseDetails />,
-        // loader: async ({ params }) =>
-        //   fetch(
-        //     `https://dev-sparkle-server.vercel.app/courses/${params.courseId}`
-        //   ),
+        loader: async ({ params }) =>
+          fetch(
+            `https://dev-sparkle-server.vercel.app/courses/${params.courseId}`
+          ),
       },
       {
         path: "/faq",
