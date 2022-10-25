@@ -7,6 +7,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Register from "../components/Register/Register";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "update_profile",
+        element: <UpdateProfile />,
       },
       {
         path: "courses",

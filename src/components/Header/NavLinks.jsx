@@ -3,12 +3,12 @@ import { DarkModeToggle } from "react-dark-mode-toggle-2";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { VscAccount } from "react-icons/vsc";
+import "./NavLinks.css";
 
 const NavLinks = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { logOut, user } = useContext(AuthContext);
-
+  console.log(user?.displayName);
   // Event handlers
   const handleLogout = () => {
     logOut()
@@ -44,16 +44,22 @@ const NavLinks = () => {
         {user ? (
           <div className="flex items-center gap-2">
             {user?.photoURL === null ? (
-              <img
-                src="https://lh3.googleusercontent.com/a/ALm5wu2LGJfyEFfwTi2u9E8djoea3noc3UjErmBm_cY8Qw=s96-c"
-                className="w-10 mr-2"
-              />
+              <Link to="/update_profile" className="tooltip-header">
+                <img
+                  src="https://lh3.googleusercontent.com/a/ALm5wu2LGJfyEFfwTi2u9E8djoea3noc3UjErmBm_cY8Qw=s96-c"
+                  className="w-10 mr-11 tooltip-block"
+                />
+                <span className="tooltiptext_header">{user?.displayName}</span>
+              </Link>
             ) : (
-              <img
-                className="h-10 mr-2 rounded-full"
-                src={user?.photoURL}
-                alt="user_profile_picture"
-              />
+              <Link to="/update_profile" className="tooltip-header">
+                <img
+                  className="h-10 mr-11 rounded-full tooltip-block"
+                  src={user?.photoURL}
+                  alt="user_profile_picture"
+                />
+                <span className="tooltiptext_header">{user?.displayName}</span>
+              </Link>
             )}
             <button
               onClick={handleLogout}
