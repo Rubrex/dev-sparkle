@@ -1,5 +1,5 @@
 import React, { createRef } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaRegFilePdf } from "react-icons/fa";
 import Pdf from "react-to-pdf";
 import "./CourseDetails.css";
@@ -69,9 +69,12 @@ const CourseDetails = () => {
         className="h-96 flex justify-center items-end  bottom-0 left-0 right-0"
         style={bgUnlock}
       >
-        <button className="mb-16 text-xl font-medium border py-2 px-5 hover:border-blue-600 hover:text-blue-900">
+        <Link
+          to={`checkout`}
+          className="mb-16 text-xl font-medium border py-2 px-5 hover:border-blue-600 hover:text-blue-900"
+        >
           Unlock full content
-        </button>
+        </Link>
       </div>
     </main>
   );

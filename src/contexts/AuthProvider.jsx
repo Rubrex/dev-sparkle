@@ -1,10 +1,12 @@
 import React, { createContext } from "react";
+import { useState } from "react";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const amarNaam = "Kulu mia";
-  let contextValue = { amarNaam };
+  // States
+
+  let contextValue = {};
 
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>

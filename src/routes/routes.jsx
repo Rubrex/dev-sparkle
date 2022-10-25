@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Checkout from "../components/Checkout/Checkout";
 import CourseDetails from "../components/CourseDetails/CourseDetails";
 import Courses from "../components/Courses/Courses";
 import Faq from "../components/FAQ/Faq";
@@ -19,26 +20,32 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register />,
       },
       {
-        path: "/courses",
+        path: "courses",
         element: <Courses />,
         loader: async () =>
           fetch("https://dev-sparkle-server.vercel.app/courses"),
       },
       {
-        path: "/courses/:courseId",
+        path: "courses/:courseId",
         element: <CourseDetails />,
         loader: async ({ params }) =>
           fetch(
             `https://dev-sparkle-server.vercel.app/courses/${params.courseId}`
           ),
+      },
+      {
+        path: "courses/:id/checkout",
+        element: <Checkout />,
+        loader: async ({ params }) =>
+          fetch(`https://dev-sparkle-server.vercel.app/courses/${params.id}`),
       },
       {
         path: "/faq",

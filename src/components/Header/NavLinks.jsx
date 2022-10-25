@@ -16,7 +16,7 @@ const NavLinks = () => {
       </li>
       <li>
         <NavLink
-          to="/FAQ"
+          to="/faq"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
         >
           FAQ
