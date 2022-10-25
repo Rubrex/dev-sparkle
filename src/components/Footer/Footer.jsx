@@ -9,18 +9,18 @@ const Footer = () => {
     <div className="relative">
       {/* tilt design */}
       {/* <div className="custom-shape-divider-top-1665293338">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M1200 0L0 0 892.25 114.72 1200 0z"
-          className="shape-fill"
-        ></path>
-      </svg>
-    </div> */}
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 0L0 0 892.25 114.72 1200 0z"
+            className="shape-fill"
+          ></path>
+        </svg>
+      </div> */}
       {/* tilt design ends */}
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
