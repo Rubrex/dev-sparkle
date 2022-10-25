@@ -3,10 +3,15 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { ImGithub } from "react-icons/im";
+
+import "./Login.css";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   // Context
-  const { signIn } = useContext(AuthContext);
+  const { signIn, providerLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   // get private route location
@@ -25,7 +30,28 @@ const Login = () => {
         navigate(from, { replace: true });
         toast.success("Login successful");
       })
-      .catch((err) => toast.error("Login Failed, Try again."));
+      .catch((err) => toast.error("Wrong email/password."));
+  };
+
+  // Google Login
+  const handleGoogleLogin = () => {
+    const googleProvider = new GoogleAuthProvider();
+    providerLogin(googleProvider)
+      .then(() => {
+        navigate(from, { replace: true });
+        toast.success("Login successful");
+      })
+      .catch((err) => toast.error("Login Failed"));
+  };
+  // Github Login
+  const handleGithubLogin = () => {
+    const githubProvider = new GithubAuthProvider();
+    providerLogin(githubProvider)
+      .then(() => {
+        navigate(from, { replace: true });
+        toast.success("Login successful");
+      })
+      .catch((err) => toast.error("Login Failed"));
   };
 
   return (
@@ -59,6 +85,15 @@ const Login = () => {
           </span>
           <button type="submit" className="bg-blue-500 text-white">
             Login
+          </button>
+          <hr className="hr-divider" data-content="OR" />
+          <button onClick={handleGoogleLogin} className="other-sign-in">
+            <FcGoogle style={{ fontSize: "32px" }} />
+            <p>Continue with Google</p>
+          </button>
+          <button onClick={handleGithubLogin} className="other-sign-in">
+            <ImGithub style={{ fontSize: "32px" }} />
+            <p>Continue with Github</p>
           </button>
         </form>
       </div>

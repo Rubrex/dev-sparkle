@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import "./Register.css";
 
@@ -79,6 +79,9 @@ const Register = () => {
               required
             />
           </div>
+          <span className="text-xs my-1">
+            Already have an account? <Link to="/login">Login</Link>
+          </span>
           <button type="submit" className="bg-yellow-500 text-white">
             Register
           </button>

@@ -21,7 +21,7 @@ const Checkout = () => {
             />
           </div>
           <div className="form-control">
-            <label htmlFor="textarea">Photo URL</label>
+            <label htmlFor="textarea">Feedback</label>
             <textarea
               type="textarea"
               name="textarea"
