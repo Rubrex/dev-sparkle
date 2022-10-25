@@ -30,12 +30,20 @@ const NavLinks = () => {
         />
       </li>
       <li>
-        <Link
-          to="/Login"
-          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
-        >
-          Login
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            to="/Login"
+            className="inline-flex items-center justify-center w-full h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+          >
+            Login
+          </Link>
+          <Link
+            to="/register"
+            className="inline-flex items-center justify-center w-full h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-yellow-400 hover:bg-yellow-700 focus:shadow-outline focus:outline-none"
+          >
+            Register
+          </Link>
+        </div>
       </li>
     </>
   );
