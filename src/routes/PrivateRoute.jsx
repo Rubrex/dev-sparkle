@@ -1,12 +1,14 @@
 import React from "react";
 import { useContext } from "react";
-import toast from "react-hot-toast";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
+  if (loading) {
+    return <div>Loading...marker:</div>;
+  }
   if (user?.email) {
     return children;
   } else {
