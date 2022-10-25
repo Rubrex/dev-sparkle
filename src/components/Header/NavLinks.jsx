@@ -7,7 +7,7 @@ import { VscAccount } from "react-icons/vsc";
 
 const NavLinks = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
+  const { logOut, user } = useContext(AuthContext);
 
   // Event handlers
   const handleLogout = () => {
