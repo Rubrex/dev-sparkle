@@ -1,9 +1,12 @@
-import React from "react";
-import { useContext } from "react";
+import React, { createRef } from "react";
 import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthProvider";
+import { FaRegFilePdf } from "react-icons/fa";
+import Pdf from "react-to-pdf";
+import "./CourseDetails.css";
 
 const CourseDetails = () => {
+  const ref = createRef();
+
   const {
     _id,
     author,
@@ -30,10 +33,24 @@ const CourseDetails = () => {
   };
 
   return (
-    <main className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative">
+    <main
+      className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative"
+      ref={ref}
+    >
       {/* Course Banner */}
       <div style={bgOverlay}>
-        <button className="absolute right-5 top-3">Download to PDF</button>
+        <Pdf targetRef={ref} filename={`${course}_tutorial.pdf`} scale={0.6}>
+          {({ toPdf }) => (
+            <button
+              onClick={toPdf}
+              className="absolute right-10 top-10 tooltip"
+            >
+              <FaRegFilePdf className="text-4xl text-blue-500 hover:text-emerald-700" />
+              <span className="tooltiptext">Download PDF</span>
+            </button>
+          )}
+        </Pdf>
+
         <h2 className="text-3xl font-bold mb-32">{course}</h2>
       </div>
       {/* Author profile */}
