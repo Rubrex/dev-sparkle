@@ -33,7 +33,7 @@
 .form > button[type="submit"] {
   font-weight: 500;
   padding: 13px 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 10px;
 }
 .form > button[type="submit"]:active {
