@@ -29,6 +29,7 @@ const CourseDetails = () => {
 
   const bgUnlock = {
     position: "absolute",
+    minHeight: "400px",
     backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 26%, rgba(255,255,255,1) 100%)`,
   };
 
@@ -66,14 +67,14 @@ const CourseDetails = () => {
         <p>{course_details}</p>
       </section>
       <div
-        className="h-96 flex justify-center items-end  bottom-0 left-0 right-0"
+        className=" flex justify-center items-end  bottom-0 left-0 right-0"
         style={bgUnlock}
       >
         <Link
           to={`checkout`}
-          className="mb-16 text-xl font-medium border py-2 px-5 hover:border-blue-600 hover:text-blue-900"
+          className="mb-16 text-xl font-medium border shadow-md py-2 px-5 hover:border-red-600 hover:text-red-400"
         >
-          Unlock full content
+          Unlock Full Content
         </Link>
       </div>
     </main>

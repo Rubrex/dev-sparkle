@@ -27,18 +27,16 @@
   box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.1);
 }
 .form-control > input:focus {
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.452);
   outline: none;
 }
 .form > button[type="submit"] {
-  /* background-color: rgb(35, 141, 203); */
-  /* color: white; */
   font-weight: 500;
   padding: 13px 10px;
   font-size: 0.9rem;
   margin-top: 10px;
 }
 .form > button[type="submit"]:active {
-  /* background-color: rgb(11, 107, 163); */
   color: yellow(252, 35, 162);
   transform: scale(0.95);
 }
