@@ -4,6 +4,7 @@ import Courses from "../components/Courses/Courses";
 import Faq from "../components/FAQ/Faq";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
+import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Register from "../components/Register/Register";
 import Main from "../layout/Main";
 
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: "/",
