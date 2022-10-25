@@ -24,7 +24,9 @@ const Login = () => {
               id="password"
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className="bg-blue-500 text-white">
+            Login
+          </button>
         </form>
       </div>
     </div>

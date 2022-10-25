@@ -43,7 +43,9 @@ const Register = () => {
               id="password"
             />
           </div>
-          <button type="submit">Register</button>
+          <button type="submit" className="bg-yellow-300 text-slate-800 ">
+            Register
+          </button>
         </form>
       </div>
     </div>
