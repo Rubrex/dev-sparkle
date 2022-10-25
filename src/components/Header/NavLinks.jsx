@@ -44,7 +44,10 @@ const NavLinks = () => {
         {user ? (
           <div className="flex items-center gap-2">
             {user?.photoURL === null ? (
-              <VscAccount className="text-5xl mr-2" />
+              <img
+                src="https://lh3.googleusercontent.com/a/ALm5wu2LGJfyEFfwTi2u9E8djoea3noc3UjErmBm_cY8Qw=s96-c"
+                className="w-10 mr-2"
+              />
             ) : (
               <img
                 className="h-10 mr-2 rounded-full"

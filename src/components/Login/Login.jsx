@@ -68,6 +68,7 @@ const Login = () => {
               name="email"
               placeholder="Email Address"
               id="email"
+              required
             />
           </div>
           <div className="form-control">
@@ -77,6 +78,7 @@ const Login = () => {
               name="password"
               placeholder="Password"
               id="password"
+              required
             />
           </div>
           <span className="text-xs my-2">

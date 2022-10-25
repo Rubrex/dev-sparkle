@@ -10,3 +10,8 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+.active {
+  color: rgb(35, 141, 203);
+  border-bottom: 5px solid rgb(35, 141, 203);
+  padding-bottom: 3px;
+}

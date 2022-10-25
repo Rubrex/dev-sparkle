@@ -20,7 +20,7 @@ const Courses = () => {
     <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid grid-cols-12">
         {/* Sidebar */}
-        <div className="order-2 md:order-1 col-span-12  md:col-span-4 lg:col-span-2">
+        <div className="order-2 md:order-1 col-span-12  md:col-span-4 lg:col-span-2 mt-10 md:mt-0">
           <h2 className="text-2xl mb-5">Total Courses: {courses.length}</h2>
           <ul className="flex flex-col gap-2 font-bold text-lg">
             {courses.map((course, index) => (
