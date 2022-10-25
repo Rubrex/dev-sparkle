@@ -1,12 +1,14 @@
 import React from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import "./Register.css";
 
 const Register = () => {
+  const navigate = useNavigate();
   // Contexts
-  const { signUp } = useContext(AuthContext);
+  const { signUp, updateUserProfile } = useContext(AuthContext);
 
   // Event Handlers
 
@@ -21,8 +23,16 @@ const Register = () => {
     signUp(email, password)
       .then((res) => {
         console.log(res);
+        updateProfile({ displayName: displayName, photoURL: photoUrl });
         toast.success("Signup successful");
+        navigate("/");
       })
+      .catch((err) => toast.error(err.code));
+  };
+
+  const updateProfile = (profile) => {
+    updateUserProfile(profile)
+      .then(() => {})
       .catch((err) => toast.error(err.code));
   };
 

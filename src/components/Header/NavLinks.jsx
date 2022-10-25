@@ -47,7 +47,7 @@ const NavLinks = () => {
               <VscAccount className="text-5xl mr-2" />
             ) : (
               <img
-                className="w-12 mr-2"
+                className="h-10 mr-2 rounded-full"
                 src={user?.photoURL}
                 alt="user_profile_picture"
               />
