@@ -51,7 +51,9 @@ const Login = () => {
         navigate(from, { replace: true });
         toast.success("Login successful");
       })
-      .catch((err) => toast.error("Login Failed"));
+      .catch((err) => {
+        toast.error(err.code);
+      });
   };
 
   return (
@@ -87,14 +89,14 @@ const Login = () => {
             Login
           </button>
           <hr className="hr-divider" data-content="OR" />
-          <button onClick={handleGoogleLogin} className="other-sign-in">
+          <div onClick={handleGoogleLogin} className="other-sign-in">
             <FcGoogle style={{ fontSize: "32px" }} />
             <p>Continue with Google</p>
-          </button>
-          <button onClick={handleGithubLogin} className="other-sign-in">
+          </div>
+          <div onClick={handleGithubLogin} className="other-sign-in">
             <ImGithub style={{ fontSize: "32px" }} />
             <p>Continue with Github</p>
-          </button>
+          </div>
         </form>
       </div>
     </div>
