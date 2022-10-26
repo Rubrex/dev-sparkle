@@ -64,50 +64,54 @@ const Login = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className=" px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 "
+      className="dark:bg-slate-800 dark:text-white pt-10 pb-20"
     >
-      <div className="w-full max-w-xs mx-auto my-10 ">
-        <form className="form" onSubmit={handleSubmit}>
-          <h2 className="text-center text-2xl font-medium ">Login</h2>
-          <div className="form-control">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              id="email"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              id="password"
-              required
-            />
-          </div>
-          <span className="text-xs my-2">
-            Don't have an account yet?{" "}
-            <Link to="/register" className="">
-              Sign Up
-            </Link>
-          </span>
-          <button type="submit" className="bg-blue-500 text-white">
-            Login
-          </button>
-          <hr className="hr-divider" data-content="OR" />
-          <div onClick={handleGoogleLogin} className="other-sign-in">
-            <FcGoogle style={{ fontSize: "32px" }} />
-            <p>Continue with Google</p>
-          </div>
-          <div onClick={handleGithubLogin} className="other-sign-in">
-            <ImGithub style={{ fontSize: "32px" }} />
-            <p>Continue with Github</p>
-          </div>
-        </form>
+      <div className=" px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+        <div className="w-full max-w-xs mx-auto ">
+          <form className="form dark:bg-slate-700" onSubmit={handleSubmit}>
+            <h2 className="text-center text-2xl font-medium ">Login</h2>
+            <div className="form-control">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                id="email"
+                className="dark:text-slate-800"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                id="password"
+                className="dark:text-slate-800"
+                required
+              />
+            </div>
+            <span className="text-xs my-2">
+              Don't have an account yet?{" "}
+              <Link to="/register" className="">
+                Sign Up
+              </Link>
+            </span>
+            <button type="submit" className="bg-blue-500 text-white">
+              Login
+            </button>
+            <hr className="hr-divider " data-content="OR" />
+            <div onClick={handleGoogleLogin} className="other-sign-in">
+              <FcGoogle style={{ fontSize: "32px" }} />
+              <p>Continue with Google</p>
+            </div>
+            <div onClick={handleGithubLogin} className="other-sign-in">
+              <ImGithub style={{ fontSize: "32px" }} />
+              <p>Continue with Github</p>
+            </div>
+          </form>
+        </div>
       </div>
     </motion.div>
   );

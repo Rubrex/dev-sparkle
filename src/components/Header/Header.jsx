@@ -7,13 +7,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="header-wrapper sticky top-0 z-10 w-full backdrop-blur  transition-colors duration-500 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/60 supports-backdrop-blur:bg-white/60 dark:bg-transparent ">
+    <div className="header-wrapper sticky top-0 z-10 w-full backdrop-blur  transition-colors duration-500 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/60 dark:bg-black/80 supports-backdrop-blur:bg-white/60  ">
       <nav className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="relative flex items-center justify-between">
           <Link to="/" className="inline-flex items-center">
             <img src={logo} alt="" width="180px" />
           </Link>
-          <ul className=" items-center hidden space-x-8 lg:flex">
+          <ul className=" items-center hidden space-x-8 lg:flex text-gray-800 dark:text-white">
             <NavLinks></NavLinks>
           </ul>
           <div className="lg:hidden">

@@ -2,12 +2,14 @@ import React, { useContext, useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 import { AuthContext } from "../../contexts/AuthProvider";
 import "./NavLinks.css";
 
 const NavLinks = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => false);
+  // Contexts
   const { logOut, user } = useContext(AuthContext);
+  const { theme, switchTheme } = useContext(AllInOneContext);
 
   // Event handlers
   const handleLogout = () => {
@@ -21,7 +23,7 @@ const NavLinks = () => {
         <NavLink
           to="/courses"
           className={
-            "hoverLink text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+            "hoverLink text-sm font-medium tracking-wide  transition-colors duration-200 hover:text-primaryColor"
           }
         >
           Courses
@@ -30,7 +32,7 @@ const NavLinks = () => {
       <li>
         <NavLink
           to="/blogs"
-          className="hoverLink text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+          className="hoverLink text-sm font-medium tracking-wide  transition-colors duration-200 hover:text-primaryColor"
         >
           Blogs
         </NavLink>
@@ -38,17 +40,13 @@ const NavLinks = () => {
       <li>
         <NavLink
           to="/faq"
-          className="hoverLink text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+          className="hoverLink text-sm font-medium tracking-wide  transition-colors duration-200 hover:text-primaryColor"
         >
           FAQ
         </NavLink>
       </li>
       <li className="flex items-center">
-        <DarkModeToggle
-          onChange={setIsDarkMode}
-          checked={isDarkMode}
-          size={60}
-        />
+        <DarkModeToggle onChange={switchTheme} checked={theme} size={60} />
       </li>
       <li>
         {user?.uid ? (

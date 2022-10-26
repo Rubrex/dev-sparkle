@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { createContext } from "react";
 
 export const AllInOneContext = createContext();
@@ -21,9 +22,13 @@ const AllInOneProvider = ({ children }) => {
       scale: 0.9,
     },
   };
+  const [theme, setTheme] = useState(false);
+
+  // Dark Mode Switching
+  const switchTheme = () => setTheme(!theme);
 
   //   context values
-  const values = { pageVariants };
+  const values = { pageVariants, theme, switchTheme };
   return (
     <AllInOneContext.Provider value={values}>
       {children}

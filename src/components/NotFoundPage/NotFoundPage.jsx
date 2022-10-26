@@ -14,15 +14,17 @@ const NotFoundPage = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="min-h-screen flex flex-col justify-center items-center"
+      className="dark:bg-slate-800 dark:text-white pt-10"
     >
-      <img src={logo} alt="" />
-      <p className="text-xl pt-5">
-        Page Not Found. Go back{" "}
-        <Link to="/" className="text-blue-400 text-2xl font-bold">
-          Home
-        </Link>
-      </p>
+      <div className="min-h-screen flex flex-col justify-center items-center">
+        <img src={logo} alt="" />
+        <p className="text-xl pt-5">
+          Page Not Found. Go back{" "}
+          <Link to="/" className="text-blue-400 text-2xl font-bold">
+            Home
+          </Link>
+        </p>
+      </div>
     </motion.div>
   );
 };

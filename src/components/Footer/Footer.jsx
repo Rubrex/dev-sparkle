@@ -4,8 +4,12 @@ import { FaMobileAlt } from "react-icons/fa";
 import { GoMailRead } from "react-icons/go";
 import logo from "../../assets/logo.png";
 import "./Footer.css";
+import { useContext } from "react";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Footer = () => {
+  // context
+  const { theme } = useContext(AllInOneContext);
   // change bg
   const bgChange = {
     backgroundImage:
@@ -13,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="relative mt-16" style={bgChange}>
+    <div className="relative pt-16" style={bgChange}>
       {/* tilt design */}
       <div className="custom-shape-divider-top-1666791488">
         <svg
@@ -24,7 +28,11 @@ const Footer = () => {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className="shape-fill"
+            style={
+              theme
+                ? { fill: "rgb(30, 41, 59)" }
+                : { fill: "rgb(255, 255, 255)" }
+            }
           ></path>
         </svg>
       </div>

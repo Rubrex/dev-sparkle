@@ -46,56 +46,62 @@ const Register = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 "
+      className="dark:bg-slate-800 dark:text-white pt-10 pb-20"
     >
-      <div className="w-full max-w-xs mx-auto py-10">
-        <form className="form" onSubmit={handleSubmit}>
-          <h2 className="text-center text-2xl font-medium ">Signup</h2>
-          <div className="form-control">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              id="username"
-            />
-          </div>
-          <div className="form-control">
-            <label htmlFor="photourl">Photo URL</label>
-            <input
-              type="text"
-              name="photourl"
-              placeholder="Photo URL"
-              id="photourl"
-            />
-          </div>
-          <div className="form-control">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              id="email"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              id="password"
-              required
-            />
-          </div>
-          <span className="text-xs my-1">
-            Already have an account? <Link to="/login">Login</Link>
-          </span>
-          <button type="submit" className="bg-yellow-500 text-white">
-            Register
-          </button>
-        </form>
+      <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+        <div className="w-full max-w-xs mx-auto py-10">
+          <form className="form dark:bg-slate-700 " onSubmit={handleSubmit}>
+            <h2 className="text-center text-2xl font-medium ">Signup</h2>
+            <div className="form-control">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                id="username"
+                className="dark:text-slate-800"
+              />
+            </div>
+            <div className="form-control">
+              <label htmlFor="photourl">Photo URL</label>
+              <input
+                type="text"
+                name="photourl"
+                placeholder="Photo URL"
+                id="photourl"
+                className="dark:text-slate-800"
+              />
+            </div>
+            <div className="form-control">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                id="email"
+                className="dark:text-slate-800"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                id="password"
+                className="dark:text-slate-800"
+                required
+              />
+            </div>
+            <span className="text-xs my-1">
+              Already have an account? <Link to="/login">Login</Link>
+            </span>
+            <button type="submit" className="bg-yellow-500 text-white">
+              Register
+            </button>
+          </form>
+        </div>
       </div>
     </motion.div>
   );
