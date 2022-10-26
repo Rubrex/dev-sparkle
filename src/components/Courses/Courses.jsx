@@ -26,7 +26,7 @@ const Courses = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="dark:bg-slate-800 dark:text-white"
+      className="dark:bg-slate-800 dark:text-white pb-20"
     >
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid grid-cols-12">

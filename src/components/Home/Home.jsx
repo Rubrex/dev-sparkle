@@ -17,7 +17,7 @@ const Home = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="dark:bg-slate-800 dark:text-white pb-10"
+      className="dark:bg-slate-800 dark:text-white pb-20"
     >
       <div className=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 pt-10 lg:pt-0 ">

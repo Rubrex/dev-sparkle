@@ -14,7 +14,7 @@ const Blogs = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="dark:bg-slate-800 "
+      className="dark:bg-slate-800 pb-20"
     >
       <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 py-10">
         <h2 className="text-center  text-3xl font-bold text-slate-800 dark:text-slate-100">

@@ -23,7 +23,7 @@ const Checkout = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="dark:bg-slate-800 dark:text-white"
+      className="dark:bg-slate-800 dark:text-white pb-20"
     >
       <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="w-full max-w-xs mx-auto py-10 ">
