@@ -5,6 +5,8 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
+import { motion } from "framer-motion";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
 
 import "./Login.css";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
@@ -12,6 +14,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 const Login = () => {
   // Context
   const { signIn, providerLogin } = useContext(AuthContext);
+  const { pageVariants } = useContext(FramerContext);
   const location = useLocation();
   const navigate = useNavigate();
   // get private route location
@@ -57,7 +60,13 @@ const Login = () => {
   };
 
   return (
-    <div className=" px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      className=" px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 "
+    >
       <div className="w-full max-w-xs mx-auto my-10 ">
         <form className="form" onSubmit={handleSubmit}>
           <h2 className="text-center text-2xl font-medium ">Login</h2>
@@ -101,7 +110,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -3,13 +3,14 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { CgProfile } from "react-icons/cg";
+import { motion } from "framer-motion";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
 
 const UpdateProfile = () => {
   const navigate = useNavigate();
   // Contexts
   const { updateUserProfile, user, setLoading } = useContext(AuthContext);
-
+  const { pageVariants } = useContext(FramerContext);
   // States
   let [name, setName] = useState(user?.displayName);
   const [photo, setPhoto] = useState(user?.photoURL);
@@ -40,7 +41,13 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative">
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative"
+    >
       <form className="form" onSubmit={handleSubmit}>
         {user?.photoURL ? (
           <img
@@ -99,7 +106,7 @@ const UpdateProfile = () => {
           Update Profile
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

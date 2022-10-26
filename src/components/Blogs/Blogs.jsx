@@ -1,9 +1,21 @@
 import React from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { motion } from "framer-motion";
+
 const Blogs = () => {
   const faq = useLoaderData();
+  const { pageVariants } = useContext(FramerContext);
+
   return (
-    <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 "
+    >
       <h2 className="text-center mt-10 text-3xl font-bold text-slate-800">
         Get the questions answered
       </h2>
@@ -22,7 +34,7 @@ const Blogs = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

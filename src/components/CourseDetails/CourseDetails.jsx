@@ -2,10 +2,14 @@ import React, { createRef } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaRegFilePdf } from "react-icons/fa";
 import Pdf from "react-to-pdf";
+import { motion } from "framer-motion";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { useContext } from "react";
 import "./CourseDetails.css";
 
 const CourseDetails = () => {
   const ref = createRef();
+  const { pageVariants } = useContext(FramerContext);
 
   const {
     _id,
@@ -37,7 +41,11 @@ const CourseDetails = () => {
   };
 
   return (
-    <main
+    <motion.main
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
       className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative"
       ref={ref}
     >
@@ -94,7 +102,7 @@ const CourseDetails = () => {
           Unlock Full Content
         </Link>
       </div>
-    </main>
+    </motion.main>
   );
 };
 

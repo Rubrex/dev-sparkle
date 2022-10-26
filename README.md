@@ -31,3 +31,4 @@ Dev Sparkle is an online educational platform and it has got few features below.
 7.  react-lottie
 8.  react-to-pdf
 9.  lottie-react
+10. framer-motion

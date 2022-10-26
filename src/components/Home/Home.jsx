@@ -4,12 +4,21 @@ import codingMachine from "./coding.json";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
-
+  const { pageVariants } = useContext(FramerContext);
+  console.log(pageVariants);
   return (
-    <div className=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      className=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  "
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 mt-10 lg:mt-0 ">
         <div className="flex flex-col justify-center gap-5 lg:ml-16 text-center md:text-start">
           <h1 className="text-5xl  lg:text-6xl  font-extrabold text-slate-800 ">
@@ -31,7 +40,7 @@ const Home = () => {
           <Lottie animationData={codingMachine} loop={true} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

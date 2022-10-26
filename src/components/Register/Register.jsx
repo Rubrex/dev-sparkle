@@ -3,11 +3,14 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { motion } from "framer-motion";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
 import "./Register.css";
 
 const Register = () => {
   const navigate = useNavigate();
   // Contexts
+  const { pageVariants } = useContext(FramerContext);
   const { signUp, updateUserProfile, setLoading } = useContext(AuthContext);
 
   // Event Handlers
@@ -38,7 +41,13 @@ const Register = () => {
   };
 
   return (
-    <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 "
+    >
       <div className="w-full max-w-xs mx-auto py-10">
         <form className="form" onSubmit={handleSubmit}>
           <h2 className="text-center text-2xl font-medium ">Signup</h2>
@@ -88,7 +97,7 @@ const Register = () => {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

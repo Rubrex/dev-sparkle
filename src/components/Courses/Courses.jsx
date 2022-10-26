@@ -2,9 +2,13 @@ import React from "react";
 import { FaReact, FaVuejs, FaAngular, FaNodeJs } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { Link, NavLink, useLoaderData } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { useContext } from "react";
 
 const Courses = () => {
   const courses = useLoaderData();
+  const { pageVariants } = useContext(FramerContext);
 
   // Icons Lists
   const icons = [
@@ -17,7 +21,13 @@ const Courses = () => {
   ];
 
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+    >
       <div className="grid grid-cols-12">
         {/* Sidebar */}
         <div className="order-2 md:order-1 col-span-12  md:col-span-4 lg:col-span-2 mt-10 md:mt-0">
@@ -81,7 +91,7 @@ const Courses = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
