@@ -1,3 +1,7 @@
+.hoverLink:hover {
+  color: rgb(35, 141, 203);
+}
+
 .tooltip-header {
   position: relative;
   display: inline-block;
