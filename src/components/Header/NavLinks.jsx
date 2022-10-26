@@ -19,7 +19,7 @@ const NavLinks = () => {
       <li>
         <NavLink
           to="/courses"
-          className={`font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor`}
+          className={`text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor`}
         >
           Courses
         </NavLink>
@@ -27,7 +27,7 @@ const NavLinks = () => {
       <li>
         <NavLink
           to="/blogs"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+          className="text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
         >
           Blogs
         </NavLink>
@@ -35,7 +35,7 @@ const NavLinks = () => {
       <li>
         <NavLink
           to="/faq"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+          className="text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
         >
           FAQ
         </NavLink>

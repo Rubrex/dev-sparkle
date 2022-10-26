@@ -11,7 +11,6 @@ import {
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
 import { useState } from "react";
-import toast from "react-hot-toast";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);

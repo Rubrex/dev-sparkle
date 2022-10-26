@@ -28,6 +28,5 @@ Dev Sparkle is an online educational platform and it has got few features below.
 4.  react-hot-toast
 5.  react-dark-mode-toggle-2
 6.  tailwindcss, postcss
-7.  react-hook-form
+7.  react-lottie
 8.  react-to-pdf
-9.  react-hook-form

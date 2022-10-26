@@ -12,7 +12,7 @@ const Header = () => {
       <nav className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="relative flex items-center justify-between">
           <Link to="/" className="inline-flex items-center">
-            <img src={logo} alt="" width="200px" />
+            <img src={logo} alt="" width="180px" />
           </Link>
           <ul className=" items-center hidden space-x-8 lg:flex">
             <NavLinks></NavLinks>
