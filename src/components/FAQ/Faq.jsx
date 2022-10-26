@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
 import { useContext } from "react";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Faq = () => {
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
 
   return (
     <motion.div

@@ -6,15 +6,14 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
-
 import "./Login.css";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Login = () => {
   // Context
   const { signIn, providerLogin } = useContext(AuthContext);
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
   const location = useLocation();
   const navigate = useNavigate();
   // get private route location

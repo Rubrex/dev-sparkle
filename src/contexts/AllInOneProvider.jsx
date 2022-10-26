@@ -1,9 +1,9 @@
 import React from "react";
 import { createContext } from "react";
 
-export const FramerContext = createContext();
+export const AllInOneContext = createContext();
 
-const FramerMotionProvider = ({ children }) => {
+const AllInOneProvider = ({ children }) => {
   const pageVariants = {
     initial: {
       opacity: 0,
@@ -25,8 +25,10 @@ const FramerMotionProvider = ({ children }) => {
   //   context values
   const values = { pageVariants };
   return (
-    <FramerContext.Provider value={values}>{children}</FramerContext.Provider>
+    <AllInOneContext.Provider value={values}>
+      {children}
+    </AllInOneContext.Provider>
   );
 };
 
-export default FramerMotionProvider;
+export default AllInOneProvider;

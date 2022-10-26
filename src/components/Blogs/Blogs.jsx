@@ -1,12 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
 import { motion } from "framer-motion";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Blogs = () => {
   const faq = useLoaderData();
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
 
   return (
     <motion.div

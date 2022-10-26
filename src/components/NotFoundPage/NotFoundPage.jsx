@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 import { useContext } from "react";
 
 const NotFoundPage = () => {
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
 
   return (
     <motion.div

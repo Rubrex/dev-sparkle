@@ -4,13 +4,13 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 import "./Register.css";
 
 const Register = () => {
   const navigate = useNavigate();
   // Contexts
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
   const { signUp, updateUserProfile, setLoading } = useContext(AuthContext);
 
   // Event Handlers

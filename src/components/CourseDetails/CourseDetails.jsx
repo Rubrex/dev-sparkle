@@ -3,13 +3,13 @@ import { Link, useLoaderData } from "react-router-dom";
 import { FaRegFilePdf } from "react-icons/fa";
 import Pdf from "react-to-pdf";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
 import { useContext } from "react";
 import "./CourseDetails.css";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const CourseDetails = () => {
   const ref = createRef();
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
 
   const {
     _id,

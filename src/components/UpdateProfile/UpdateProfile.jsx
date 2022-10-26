@@ -4,13 +4,13 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const UpdateProfile = () => {
   const navigate = useNavigate();
   // Contexts
   const { updateUserProfile, user, setLoading } = useContext(AuthContext);
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
   // States
   let [name, setName] = useState(user?.displayName);
   const [photo, setPhoto] = useState(user?.photoURL);

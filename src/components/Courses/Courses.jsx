@@ -3,12 +3,12 @@ import { FaReact, FaVuejs, FaAngular, FaNodeJs } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
 import { useContext } from "react";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Courses = () => {
   const courses = useLoaderData();
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
 
   // Icons Lists
   const icons = [

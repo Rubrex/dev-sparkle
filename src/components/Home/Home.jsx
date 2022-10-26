@@ -4,12 +4,12 @@ import codingMachine from "./coding.json";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
 import { motion } from "framer-motion";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
   console.log(pageVariants);
   return (
     <motion.div

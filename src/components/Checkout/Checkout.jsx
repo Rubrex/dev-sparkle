@@ -3,12 +3,12 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import { motion } from "framer-motion";
-import { FramerContext } from "../../contexts/FramerMotionProvider";
 import { useContext } from "react";
+import { AllInOneContext } from "../../contexts/AllInOneProvider";
 
 const Checkout = () => {
   const { course, price } = useLoaderData()[0];
-  const { pageVariants } = useContext(FramerContext);
+  const { pageVariants } = useContext(AllInOneContext);
 
   // Event Handlers
   const handleSubmit = (event) => {
