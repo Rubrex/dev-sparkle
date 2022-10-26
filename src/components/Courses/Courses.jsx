@@ -28,7 +28,7 @@ const Courses = () => {
             {courses.map((course, index) => (
               <li key={course._id}>
                 <NavLink
-                  className="flex text-xl items-center justify-center md:justify-start bg-slate-200 hover:bg-blue-200 py-3 px-4 rounded-md"
+                  className="flex text-xl transition-colors duration-300 items-center justify-center md:justify-start bg-slate-200 hover:bg-blue-200 py-3 px-4 rounded-md"
                   to={`/courses/${course._id}`}
                 >
                   <span className="text-3xl">{icons[index]}</span>
@@ -70,7 +70,7 @@ const Courses = () => {
                   <Link
                     to={`/courses/${course._id}`}
                     key={course._id}
-                    className="border flex flex-col items-center py-5 hover:bg-blue-200 cursor-pointer"
+                    className="border transition-colors duration-300 flex flex-col items-center py-5 hover:bg-blue-200 cursor-pointer"
                   >
                     <div className="text-8xl">{icons[index]}</div>
                     <h2 className="text-3xl">{course.course_name}</h2>
