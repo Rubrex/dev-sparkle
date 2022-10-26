@@ -46,66 +46,71 @@ const UpdateProfile = () => {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="px-4 pt-16 pb-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative"
+      className="dark:bg-slate-800 dark:text-white pt-10 pb-20"
     >
-      <form className="form" onSubmit={handleSubmit}>
-        {user?.photoURL ? (
-          <img
-            src={user?.photoURL}
-            width="90px"
-            className=" rounded-full mx-auto"
-            alt=""
-          />
-        ) : (
-          <img
-            src="https://lh3.googleusercontent.com/a/ALm5wu2LGJfyEFfwTi2u9E8djoea3noc3UjErmBm_cY8Qw=s96-c"
-            width="90px"
-            className=" rounded-full mx-auto"
-            alt=""
-          />
-        )}
+      <div className="px-4 pt-16 pb-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative">
+        <form className="form dark:bg-slate-700" onSubmit={handleSubmit}>
+          {user?.photoURL ? (
+            <img
+              src={user?.photoURL}
+              width="90px"
+              className=" rounded-full mx-auto"
+              alt=""
+            />
+          ) : (
+            <img
+              src="https://lh3.googleusercontent.com/a/ALm5wu2LGJfyEFfwTi2u9E8djoea3noc3UjErmBm_cY8Qw=s96-c"
+              width="90px"
+              className=" rounded-full mx-auto"
+              alt=""
+            />
+          )}
 
-        <h2 className="text-center text-md font-medium mb-5">
-          Update your profile
-        </h2>
-        <div className="form-control">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            onChange={handleUsername}
-            placeholder={name ? name : "Empty"}
-            value={name}
-            id="username"
-          />
-        </div>
-        <div className="form-control">
-          <label htmlFor="photourl">Photo URL</label>
-          <input
-            type="text"
-            name="photourl"
-            placeholder={photo ? photo : "Empty"}
-            value={photo}
-            onChange={handlePhoto}
-            id="photourl"
-          />
-        </div>
-        <div className="form-control">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder={user?.email ? user?.email : "Empty"}
-            value={email}
-            readOnly
-            id="email"
-            required
-          />
-        </div>
-        <button type="submit" className="bg-green-500 text-white">
-          Update Profile
-        </button>
-      </form>
+          <h2 className="text-center text-md font-medium mb-5">
+            Update your profile
+          </h2>
+          <div className="form-control">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              onChange={handleUsername}
+              placeholder={name ? name : "Empty"}
+              className="dark:text-slate-800"
+              value={name}
+              id="username"
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="photourl">Photo URL</label>
+            <input
+              type="text"
+              name="photourl"
+              placeholder={photo ? photo : "Empty"}
+              className="dark:text-slate-800"
+              value={photo}
+              onChange={handlePhoto}
+              id="photourl"
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder={user?.email ? user?.email : "Empty"}
+              className="dark:text-slate-800"
+              value={email}
+              readOnly
+              id="email"
+              required
+            />
+          </div>
+          <button type="submit" className="bg-green-500 text-white">
+            Update Profile
+          </button>
+        </form>
+      </div>
     </motion.div>
   );
 };
