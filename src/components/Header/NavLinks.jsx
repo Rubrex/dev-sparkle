@@ -8,7 +8,6 @@ import "./NavLinks.css";
 const NavLinks = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { logOut, user } = useContext(AuthContext);
-  console.log(user?.displayName);
   // Event handlers
   const handleLogout = () => {
     logOut()
@@ -23,6 +22,14 @@ const NavLinks = () => {
           className={`font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor`}
         >
           Courses
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/blogs"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+        >
+          Blogs
         </NavLink>
       </li>
       <li>

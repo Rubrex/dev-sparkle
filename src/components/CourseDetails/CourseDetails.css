@@ -1,6 +1,5 @@
 .tooltip {
   display: inline-block;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.815);
 }
 
 .tooltip .tooltiptext {

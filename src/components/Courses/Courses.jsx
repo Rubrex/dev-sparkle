@@ -21,7 +21,9 @@ const Courses = () => {
       <div className="grid grid-cols-12">
         {/* Sidebar */}
         <div className="order-2 md:order-1 col-span-12  md:col-span-4 lg:col-span-2 mt-10 md:mt-0">
-          <h2 className="text-2xl mb-5">Total Courses: {courses.length}</h2>
+          <h2 className="text-xl mb-5 font-medium">
+            Total Courses: {courses.length}
+          </h2>
           <ul className="flex flex-col gap-2 font-bold text-lg">
             {courses.map((course, index) => (
               <li key={course._id}>
@@ -37,12 +39,12 @@ const Courses = () => {
           </ul>
         </div>
         {/* Details */}
-        <div className="order-1 md:order-2 col-span-12 md:col-span-8 lg:col-span-10 md:border-l-slate-700 md:border-l ml-5">
+        <div className="order-1 md:order-2 col-span-12 md:col-span-8 lg:col-span-10 md:border-l-slate-400 md:border-l ml-5">
           <div className=" md:pl-5">
             <img
-              src="https://via.placeholder.com/1200x400"
+              src="https://technotronixs.com/assets/front/img/summernote/61be16afc2df9.jpg"
               alt=""
-              className="mb-10"
+              className="mb-10 rounded-lg"
             />
             <h1 className="text-3xl font-bold text-center py-5 text-slate-800">
               What is DevSparkle?{" "}

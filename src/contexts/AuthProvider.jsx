@@ -7,11 +7,11 @@ import {
   signOut,
   updateProfile,
   signInWithPopup,
-  GoogleAuthProvider,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -77,6 +77,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     loading,
+    setLoading,
     updateUserProfile,
     providerLogin,
   };
