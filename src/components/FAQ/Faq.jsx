@@ -18,7 +18,7 @@ const Faq = () => {
         {/* Banner */}
         <div>
           <img
-            src="http://www.basehoundmedia.com/wp-content/uploads/2019/04/faq-banner.jpg"
+            src="https://i.imgur.com/MJFwLoK.jpg"
             alt=""
             className="w-full rounded-lg"
           />
