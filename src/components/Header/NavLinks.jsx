@@ -57,7 +57,7 @@ const NavLinks = () => {
               <Link to="/update_profile" className="tooltip-header">
                 <img
                   src="https://lh3.googleusercontent.com/a/ALm5wu2LGJfyEFfwTi2u9E8djoea3noc3UjErmBm_cY8Qw=s96-c"
-                  className="w-10 mr-4 tooltip-block"
+                  className="w-10 mr-4 rounded-full tooltip-block"
                 />
                 <span className="tooltiptext_header">{user?.displayName}</span>
               </Link>
