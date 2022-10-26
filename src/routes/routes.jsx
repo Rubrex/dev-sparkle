@@ -45,6 +45,10 @@ const router = createBrowserRouter([
           fetch("https://dev-sparkle-server.vercel.app/blogs"),
       },
       {
+        path: "faq",
+        element: <Faq />,
+      },
+      {
         path: "courses",
         element: <Courses />,
         loader: async () =>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { DarkModeToggle } from "react-dark-mode-toggle-2";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import NavLinks from "./NavLinks";
 

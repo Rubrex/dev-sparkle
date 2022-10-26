@@ -1,25 +1,28 @@
 import React, { useContext, useState } from "react";
-import { DarkModeToggle } from "react-dark-mode-toggle-2";
+import DarkModeToggle from "react-dark-mode-toggle";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import "./NavLinks.css";
 
 const NavLinks = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => false);
   const { logOut, user } = useContext(AuthContext);
+
   // Event handlers
   const handleLogout = () => {
     logOut()
       .then(() => toast.success("Successfully logged out"))
-      .catch(() => toast.error("Something went wrong, failed to log out"));
+      .catch((err) => toast.error(err.code));
   };
   return (
     <>
       <li>
         <NavLink
           to="/courses"
-          className={`text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor`}
+          className={
+            "text-sm font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primaryColor"
+          }
         >
           Courses
         </NavLink>
@@ -43,12 +46,12 @@ const NavLinks = () => {
       <li className="flex items-center">
         <DarkModeToggle
           onChange={setIsDarkMode}
-          isDarkMode={isDarkMode}
+          checked={isDarkMode}
           size={60}
         />
       </li>
       <li>
-        {user ? (
+        {user?.uid ? (
           <div className="flex items-center gap-2">
             {user?.photoURL === null ? (
               <Link to="/update_profile" className="tooltip-header">
