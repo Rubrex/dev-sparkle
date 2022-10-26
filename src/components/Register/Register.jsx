@@ -8,7 +8,7 @@ import "./Register.css";
 const Register = () => {
   const navigate = useNavigate();
   // Contexts
-  const { signUp, updateUserProfile } = useContext(AuthContext);
+  const { signUp, updateUserProfile, setLoading } = useContext(AuthContext);
 
   // Event Handlers
 
@@ -26,6 +26,7 @@ const Register = () => {
         updateProfile({ displayName: displayName, photoURL: photoUrl });
         toast.success("Signup successful");
         navigate("/");
+        setLoading(false);
       })
       .catch((err) => toast.error(err.code));
   };
