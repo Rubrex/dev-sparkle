@@ -9,10 +9,18 @@ import { motion } from "framer-motion";
 import "./Login.css";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { AllInOneContext } from "../../contexts/AllInOneProvider";
+import { useState } from "react";
+import { useRef } from "react";
 
 const Login = () => {
+  // useRef
+  const forgotEmailValue = useRef();
+
+  // state
+  const [reset, setReset] = useState(false);
+
   // Context
-  const { signIn, providerLogin } = useContext(AuthContext);
+  const { signIn, providerLogin, resetPassword } = useContext(AuthContext);
   const { pageVariants } = useContext(AllInOneContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -61,6 +69,23 @@ const Login = () => {
       });
   };
 
+  // Forgot Password
+  const handleForgetToggler = () => {
+    setReset(!reset);
+  };
+
+  const handleForgetPassword = () => {
+    resetPassword(forgotEmailValue?.current?.value)
+      .then(() => {
+        toast.success("Password Reset link sent");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+        // ..
+      });
+  };
+
   return (
     <motion.div
       initial="initial"
@@ -101,6 +126,33 @@ const Login = () => {
                 Sign Up
               </Link>
             </span>
+            {reset ? (
+              <div className="flex items-center border">
+                <input
+                  type="email"
+                  name="forgot_password_email"
+                  className=" outline-none w-full  dark:bg-slate-700"
+                  ref={forgotEmailValue}
+                />{" "}
+                <span
+                  className="text-md bg-blue-500 text-white hover:bg-slate-800 cursor-pointer py-2 px-4 "
+                  onClick={() => {
+                    handleForgetPassword();
+                    handleForgetToggler();
+                  }}
+                >
+                  Reset
+                </span>
+              </div>
+            ) : (
+              <span
+                onClick={handleForgetToggler}
+                className="text-sm hover:text-blue-500 cursor-pointer"
+              >
+                Forgot Password ?
+              </span>
+            )}
+
             <button type="submit" className="bg-blue-500 text-white">
               Login
             </button>

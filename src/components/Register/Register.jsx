@@ -32,7 +32,7 @@ const Register = () => {
 
         // navigate("/");
       })
-      .catch((err) => console.error(err));
+      .catch((err) => toast.error(err.code));
   };
 
   const emailSent = () => {
