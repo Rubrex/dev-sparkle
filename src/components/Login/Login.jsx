@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
@@ -20,7 +20,8 @@ const Login = () => {
   const [reset, setReset] = useState(false);
 
   // Context
-  const { signIn, providerLogin, resetPassword } = useContext(AuthContext);
+  const { signIn, providerLogin, resetPassword, setLoading } =
+    useContext(AuthContext);
   const { pageVariants } = useContext(AllInOneContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,7 +44,10 @@ const Login = () => {
         }
         toast.error("Please verify your email");
       })
-      .catch((err) => toast.error("Wrong email/password."));
+      .catch((err) => {
+        toast.error("Wrong email/password.");
+        setLoading(false);
+      });
   };
 
   // Google Login
@@ -54,7 +58,10 @@ const Login = () => {
         navigate(from, { replace: true });
         toast.success("Login successful");
       })
-      .catch((err) => toast.error("Login Failed"));
+      .catch((err) => {
+        toast.error(err.code);
+        setLoading(false);
+      });
   };
   // Github Login
   const handleGithubLogin = () => {
@@ -66,6 +73,7 @@ const Login = () => {
       })
       .catch((err) => {
         toast.error(err.code);
+        setLoading(false);
       });
   };
 

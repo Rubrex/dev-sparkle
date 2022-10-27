@@ -13,6 +13,7 @@ import {
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -75,6 +76,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      toast.success("Auth Triggered");
       if (currentUser === null || currentUser.emailVerified) {
         setUser(currentUser);
       }
