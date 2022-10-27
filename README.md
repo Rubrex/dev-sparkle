@@ -4,7 +4,7 @@
 
 ## Dev Sparkle Features and functionality
 
-Dev Sparkle is an online educational platform and it has got few features below.
+> Dev Sparkle is an online educational platform and it has got few features below.
 
 1.  Dark Mode
 2.  Freedom to choose your desired course

@@ -76,7 +76,6 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      toast.success("Auth Triggered");
       if (currentUser === null || currentUser.emailVerified) {
         setUser(currentUser);
       }

@@ -10,7 +10,6 @@ import { AllInOneContext } from "../../contexts/AllInOneProvider";
 const Home = () => {
   const { user } = useContext(AuthContext);
   const { pageVariants } = useContext(AllInOneContext);
-  console.log(pageVariants);
   return (
     <motion.div
       initial="initial"
