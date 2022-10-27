@@ -27,10 +27,13 @@ const Login = () => {
     const password = form.password.value;
     signIn(email, password)
       .then((res) => {
-        console.log(res);
         form.reset();
-        navigate(from, { replace: true });
-        toast.success("Login successful");
+        if (res.user?.emailVerified) {
+          navigate(from, { replace: true });
+          toast.success("Login successful");
+          return;
+        }
+        toast.error("Please verify your email");
       })
       .catch((err) => toast.error("Wrong email/password."));
   };

@@ -11,7 +11,8 @@ const Register = () => {
   const navigate = useNavigate();
   // Contexts
   const { pageVariants } = useContext(AllInOneContext);
-  const { signUp, updateUserProfile, setLoading } = useContext(AuthContext);
+  const { signUp, updateUserProfile, setLoading, verifyEmail } =
+    useContext(AuthContext);
 
   // Event Handlers
 
@@ -26,12 +27,19 @@ const Register = () => {
     signUp(email, password)
       .then((res) => {
         console.log(res);
+        emailSent();
         updateProfile({ displayName: displayName, photoURL: photoUrl });
-        toast.success("Signup successful");
-        navigate("/");
-        setLoading(false);
+
+        // navigate("/");
       })
-      .catch((err) => toast.error(err.code));
+      .catch((err) => console.error(err));
+  };
+
+  const emailSent = () => {
+    verifyEmail().then(() => {
+      toast.success("Verification email sent");
+      setLoading(false);
+    });
   };
 
   const updateProfile = (profile) => {

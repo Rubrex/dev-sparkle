@@ -7,6 +7,7 @@ import {
   signOut,
   updateProfile,
   signInWithPopup,
+  sendEmailVerification,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
@@ -43,6 +44,13 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // Verify email address
+
+  const verifyEmail = () => {
+    setLoading(true);
+    return sendEmailVerification(auth.currentUser);
+  };
+
   // Google Login
   const providerLogin = (provider) => {
     setLoading(true);
@@ -60,7 +68,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser === null || currentUser.email) {
+      if (currentUser === null || currentUser.emailVerified) {
         setUser(currentUser);
       }
       setLoading(false);
@@ -73,6 +81,7 @@ const AuthProvider = ({ children }) => {
   const contextValue = {
     user,
     signUp,
+    verifyEmail,
     signIn,
     logOut,
     loading,
